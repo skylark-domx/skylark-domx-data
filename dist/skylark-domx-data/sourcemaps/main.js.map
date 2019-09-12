@@ -1,0 +1,1 @@
+{"version":3,"sources":["main.js"],"names":["define","data"],"mappings":";;;;;;;AAAAA,QACC,UACC,SAASC,GACV,OAAOA","file":"../main.js","sourcesContent":["define([\r\n\t\"./data\"\r\n],function(data){\r\n\treturn data;\r\n});"]}
