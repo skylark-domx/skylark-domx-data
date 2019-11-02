@@ -531,11 +531,11 @@ define('skylark-domx-data/data',[
     return skylark.attach("domx.data", datax);
 });
 define('skylark-domx-data/main',[
-	"./data",
-	"skylark-domx-velm",
-	"skylark-domx-query"	
+    "./data",
+    "skylark-domx-velm",
+    "skylark-domx-query"    
 ],function(data,velm,$){
-    // from ./datax
+    // from ./data
     velm.delegate([
         "attr",
         "data",
@@ -544,26 +544,26 @@ define('skylark-domx-data/main',[
         "removeData",
         "text",
         "val"
-    ], datax);
+    ], data);
 
-    $.fn.text = $.wraps.wrapper_value(datax.text, datax, datax.text);
+    $.fn.text = $.wraps.wrapper_value(data.text, data, data.text);
 
-    $.fn.attr = $.wraps.wrapper_name_value(datax.attr, datax, datax.attr);
+    $.fn.attr = $.wraps.wrapper_name_value(data.attr, data, data.attr);
 
-    $.fn.removeAttr = $.wraps.wrapper_every_act(datax.removeAttr, datax);
+    $.fn.removeAttr = $.wraps.wrapper_every_act(data.removeAttr, data);
 
-    $.fn.prop = $.wraps.wrapper_name_value(datax.prop, datax, datax.prop);
+    $.fn.prop = $.wraps.wrapper_name_value(data.prop, data, data.prop);
 
-    $.fn.removeProp = $.wraps.wrapper_every_act(datax.removeProp, datax);
+    $.fn.removeProp = $.wraps.wrapper_every_act(data.removeProp, data);
 
-    $.fn.data = $.wraps.wrapper_name_value(datax.data, datax, datax.data);
+    $.fn.data = $.wraps.wrapper_name_value(data.data, data, data.data);
 
-    $.fn.removeData = $.wraps.wrapper_every_act(datax.removeData, datax);
+    $.fn.removeData = $.wraps.wrapper_every_act(data.removeData, data);
 
-    $.fn.val = $.wraps.wrapper_value(datax.val, datax, datax.val);
+    $.fn.val = $.wraps.wrapper_value(data.val, data, data.val);
 
 
-	return data;
+    return data;
 });
 define('skylark-domx-data', ['skylark-domx-data/main'], function (main) { return main; });
 
