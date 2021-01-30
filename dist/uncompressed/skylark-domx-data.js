@@ -75,7 +75,7 @@
   factory(define,require);
 
   if (!isAmd) {
-    var skylarkjs = require("skylark-langx/skylark");
+    var skylarkjs = require("skylark-langx-ns");
 
     if (isCmd) {
       module.exports = skylarkjs;
@@ -294,7 +294,11 @@ define('skylark-domx-data/data',[
                 }
             }
             var attrName = 'data-' + name.replace(capitalRE, "-$1").toLowerCase()
-            return attr(elm, attrName);
+            var value = attr(elm, attrName);
+            if (!langx.isString(value)) {
+              value = undefined;
+            }
+            return value;
         }
 
     }
