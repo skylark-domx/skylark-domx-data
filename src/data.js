@@ -333,9 +333,14 @@ define([
      */
     function text(elm, txt) {
         if (txt === undefined) {
-            return elm.textContent;
+            return elm.textContent !==undefined  ? elm.textContent : elm.innerText;
         } else {
-            elm.textContent = txt == null ? '' : '' + txt;
+            txt = txt == null ? '' : '' + txt ;
+            if (elm.textContent !==undefined ) {
+              elm.textContent = txt ;
+            } else {
+              elm.innerText = txt ;
+            }
             return this;
         }
     }
