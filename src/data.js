@@ -292,13 +292,23 @@ define([
      * @param {String} value
      */
     function prop(elm, name, value) {
-        name = propMap[name] || name;
-        if (value === undefined) {
-            return elm[name];
-        } else {
-            elm[name] = value;
-            return this;
-        }
+      if (value === undefined) {
+          if (typeof name === "object") {
+              for (var propName in name) {
+                  prop(elm, propName, name[propName]);
+              }
+              return this;
+          } 
+      } 
+
+
+      name = propMap[name] || name;
+      if (value === undefined) {
+          return elm[name];
+      } else {
+          elm[name] = value;
+          return this;
+      }
     }
 
     /*
