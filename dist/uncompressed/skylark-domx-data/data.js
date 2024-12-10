@@ -267,6 +267,7 @@ define([
             var store = _store(elm, true);
             names.forEach(function(name) {
                 delete store[name];
+                delete store[camelCase(name)];
             });            
         } else {
             cleanData(elm);
